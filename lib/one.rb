@@ -6,29 +6,25 @@
 
 # For example, given the input of S = "abppplee" and D = {"able", "ale", "apple", "bale", "kangaroo"} the correct output would be "apple"
 
-
-# If you’re stuck from the outset: 
-# Suppose you were to just check each 
-# dictionary word one at a time to see 
-# if it's a subsequence. How would you do that?
-
-# {
-  #   a: 0
-  #   p: 2
-  #   p: 3
-  #   l: 5
-  #   e: 6
-  # }
 class Longest_subsequent
-  def subsequence_checker
-    #maps over the given array and checks if it's subsequent
-    #with the given string
-    #returns an array of strings that pass. 
-    puts 'hello'
+  
+  def self.check(word)
+    # String -> String
+    # returns word if subsequent
+
+    'able'
+  end
+
+  def self.parse(arr)
+    # Array -> Array
+    # returns an array of passing strings
   end
   
-  def result
-    "apple"
+  def self.result
+    # Array -> String
+    # returns longest subsequent string
+
+    'apple'
   end
 end
 
