@@ -6,6 +6,16 @@
 
 # For example, given the input of S = "abppplee" and D = {"able", "ale", "apple", "bale", "kangaroo"} the correct output would be "apple"
 
+class Array
+  def longest
+    longestElement = []
+    self.each do |element|
+	    longestElement = element if element.length > longestElement.length
+    end
+    longestElement
+  end
+end
+
 module Subsequence
   def self.test(string, word)
     # (String, String) -> String
@@ -29,14 +39,27 @@ module Subsequence
     result.join if result
   end
 
-  def self.all(word, arr)
+  def self.all(string, words)
     # (String, Array) -> Array
     # returns an array of passing strings
+
+    arr = []
+    words.map { |word| 
+      if self.test(string, word) == word
+        arr << word
+      end
+    }
+    arr
   end
 
-  def self.longest(word, arr)
+  def self.longest(string, words)
     # (String, Array) -> String
     # returns longest subsequent string
-    'apple'
+
+    subsequents = words.map do |word|
+      word if self.test(string, word)
+    end
+
+    subsequents.longest
   end
 end
